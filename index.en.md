@@ -8,6 +8,8 @@ permalink: /en/
 
 # Designing Systems That Rarely Need Debugging
 
+A development approach focused on designing systems where debugging becomes rare.
+
 Debugging is usually treated as a normal part of software development.
 
 Write code.  
@@ -23,22 +25,25 @@ Over time I started wondering whether this cycle itself was the real problem.
 
 For most of my work as a game developer, I’ve tried to follow an approach I informally call **debuggingless development**.
 
-The idea is simple: instead of becoming better at debugging, design systems where debugging becomes rare.
+The term itself is not an established concept.  
+It’s simply a name I use to describe a development style that tries to minimize the need for debugging by focusing on architecture, deterministic execution, and structural logging.
+
+The goal is not to eliminate debugging entirely, but to design systems where debugging becomes rare.
 
 ---
 
 ## Why debugging becomes difficult
 
-As systems grow larger, debugging becomes harder for reasons that have little to do with the bug itself.
+As systems grow larger, debugging becomes harder for reasons that often have little to do with the bug itself.
 
-Large systems tend to accumulate:
+Large software systems tend to accumulate:
 
 - implicit state
 - unpredictable execution order
 - hidden dependencies
 - fragile interactions between systems
 
-When these accumulate, debugging becomes less about fixing a mistake and more about reconstructing what the system is doing.
+When this happens, debugging becomes less about fixing a mistake and more about reconstructing what the system is doing.
 
 In many cases the real issue is not the bug, but the structure that allowed it.
 
@@ -52,13 +57,13 @@ Instead of focusing on debugging tools, I started focusing on three structural i
 - deterministic execution
 - structural logging
 
-These principles drastically reduced how often debugging was actually needed.
+These principles dramatically reduced how often debugging was actually needed.
 
 ---
 
 ## Architecture first
 
-The first goal is making **invalid states difficult to represent**.
+The first goal is making **invalid states difficult or impossible to represent**.
 
 This means designing systems with:
 
@@ -111,7 +116,7 @@ Many problems reveal themselves simply by comparing logs between versions.
 
 Debuggers still exist.
 
-Breakpoints, stepping through code, inspecting memory — they are still useful.
+Breakpoints, stepping through code, inspecting memory — they remain useful tools.
 
 But they should not be the primary way to understand the system.
 
