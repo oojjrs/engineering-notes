@@ -1,89 +1,188 @@
 ---
 layout: page
-title: "Debuggingless Development"
+title: "Designing Systems That Rarely Need Debugging"
 permalink: /en/
 ---
 
 [🇰🇷 한국어](../)
 
-Debuggingless Development is an approach focused on
-**designing systems where bugs are difficult to create in the first place, rather than relying on debugging to resolve them later.**
+# Designing Systems That Rarely Need Debugging
 
-In many projects, this cycle becomes normal:
+Debugging is usually treated as a normal part of software development.
 
-write code → run → find bug → debug → patch → repeat
+Write code.  
+Run the program.  
+Find a bug.  
+Debug it.  
+Patch it.  
+Repeat.
 
-The longer this becomes routine, the more likely it is that the real problem is not a single defect, but the
-**structure of the system itself**.
+Over time I started wondering whether this cycle itself was the real problem.
 
-My preferred approach is the opposite.
-Instead of improving debugging as the primary tool, I try to build systems where **debugging becomes rare**.
+> If a system requires frequent debugging, the architecture is probably wrong.
 
-## Principles
+For most of my work as a game developer, I’ve tried to follow an approach I informally call **debuggingless development**.
 
-### 1. Architecture First
+The idea is simple: instead of becoming better at debugging, design systems where debugging becomes rare.
 
-The system should be designed so that **invalid states are difficult to represent**.
+---
 
-- clear ownership of data
-- explicit state transitions
-- controlled mutation points
-- clear lifecycle boundaries
+## Why debugging becomes difficult
 
-Good architecture does not merely fix classes of bugs.
-It prevents them from appearing.
+As systems grow larger, debugging becomes harder for reasons that have little to do with the bug itself.
 
-### 2. Deterministic Execution
+Large systems tend to accumulate:
 
-Core systems should follow **predictable execution flows**.
+- implicit state
+- unpredictable execution order
+- hidden dependencies
+- fragile interactions between systems
 
-Deterministic behavior makes it easier to:
+When these accumulate, debugging becomes less about fixing a mistake and more about reconstructing what the system is doing.
 
-- understand behavior
-- reproduce issues
-- compare builds
-- detect regressions
+In many cases the real issue is not the bug, but the structure that allowed it.
 
-This is especially important in game frameworks where many systems interact continuously.
+---
 
-### 3. Structural Logging
+## The shift
 
-Logs should not be temporary debug output.
-They should be treated as **part of the architecture**.
+Instead of focusing on debugging tools, I started focusing on three structural ideas:
 
-Important events should always emit logs:
-
-- initialization
-- state transitions
-- entity lifecycle
-- major triggers
-- structural flow boundaries
-
-These logs become stable reference points across builds, making regressions easier to detect.
-
-### 4. Debugging as a Last Resort
-
-Traditional debugging tools still matter:
-
-- breakpoints
-- step execution
-- memory inspection
-
-But they should not be the primary way a system is understood.
-
-Most issues should become visible first through:
-
-- architectural constraints
-- deterministic flow
+- architecture constraints
+- deterministic execution
 - structural logging
 
-Debugging should remain a last resort.
+These principles drastically reduced how often debugging was actually needed.
+
+---
+
+## Architecture first
+
+The first goal is making **invalid states difficult to represent**.
+
+This means designing systems with:
+
+- explicit ownership of data
+- clear lifecycle boundaries
+- controlled mutation points
+- explicit state transitions
+
+Good architecture eliminates entire classes of bugs before they appear.
+
+---
+
+## Deterministic execution
+
+Core systems should execute in a predictable order.
+
+When execution is deterministic:
+
+- behavior becomes easier to reason about
+- bugs become reproducible
+- regression detection becomes easier
+
+This is particularly important in game systems where multiple subsystems interact every frame.
+
+---
+
+## Structural logging
+
+Logging is often treated as temporary debugging output.
+
+In this approach, logging becomes **part of the architecture itself**.
+
+Important events always produce logs:
+
+- initialization
+- system boundaries
+- entity lifecycle
+- gameplay triggers
+- state transitions
+
+These logs remain permanently in the codebase.
+
+Because of this, execution flows can be compared across builds.
+
+Many problems reveal themselves simply by comparing logs between versions.
+
+---
+
+## Debugging as a last resort
+
+Debuggers still exist.
+
+Breakpoints, stepping through code, inspecting memory — they are still useful.
+
+But they should not be the primary way to understand the system.
+
+In practice, most issues become visible through:
+
+- architecture constraints
+- deterministic behavior
+- structural logs
+
+Actual debugging sessions tend to happen rarely.
+
+In my experience, it is often **once or twice per year**.
+
+Interestingly, those rare cases are frequently engine-level issues rather than application logic.
+
+---
+
+## A different debugging workflow
+
+Instead of stepping through code, the workflow often looks like this:
+
+1. Logs reveal unexpected behavior  
+2. Execution flows are compared across builds  
+3. The architectural boundary where behavior diverges becomes obvious  
+
+This often resolves the problem without interactive debugging.
+
+---
+
+## Why this works well in game development
+
+Game systems tend to become highly interconnected.
+
+Multiple subsystems interact continuously:
+
+- gameplay logic
+- entity systems
+- simulation loops
+- animation
+- networking
+
+In such environments, debugging becomes increasingly fragile.
+
+A deterministic architecture with structural logging provides a much more stable way to reason about behavior.
+
+---
 
 ## Conclusion
 
-Debugging cannot be eliminated completely.
+Debugging will always exist.
 
-However, strong architecture can dramatically reduce how often debugging is necessary.
+But the **frequency of debugging** is strongly influenced by system architecture.
 
-In many systems, the best debugging strategy is not becoming better at debugging,
-but **designing software where bugs are harder to create**.
+Systems that rely heavily on debugging often allow too many invalid states and unpredictable behaviors.
+
+Systems designed with strong constraints tend to reveal problems much earlier.
+
+In many cases, the best debugging strategy is simply:
+
+> design systems where bugs are harder to create.
+
+---
+
+## Open question
+
+I’m curious how common this development style is.
+
+Many teams rely heavily on debugging tools and iterative patching.
+
+But in my experience, architecture quality has a much larger impact on debugging frequency than the tools themselves.
+
+Do others try to design systems specifically to reduce the need for debugging?
+
+Or is heavy debugging simply unavoidable in most real-world codebases?
