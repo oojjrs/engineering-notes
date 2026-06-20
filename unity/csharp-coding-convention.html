@@ -329,8 +329,6 @@
 </head>
 <body>
   <main>
-    <div class="scope-rule">서드파티 코드 영역은 이 컨벤션 적용 대상이 아니다. 기존 도메인이 존재하는 곳은 항상 기존 원칙을 우선한다.</div>
-
     <header>
       <div>
         <h1>Unity C# 코딩 컨벤션</h1>
@@ -349,6 +347,8 @@
         <li>최종 검수와 수동 코딩 기준을 맞추기 위해 AI에게도 동일하게 요구한다.</li>
       </ul>
     </section>
+
+    <div class="scope-rule">서드파티 코드 영역은 이 컨벤션 적용 대상이 아니다. 기존 도메인이 존재하는 곳은 항상 기존 원칙을 우선한다.</div>
 
     <section class="reference-strip" aria-label="상위 기준">
       <div>
@@ -879,11 +879,11 @@ private enum StateEnum { }</code></pre>
     {
     }
 
-    public void Click()
+    void ClickableInterface.Click()
     {
     }
 
-    public void ShowTooltip()
+    void TooltipInterface.ShowTooltip()
     {
     }
 
@@ -926,6 +926,37 @@ private enum StateEnum { }</code></pre>
       </article>
       <article class="rule-card">
         <div class="rule-index">23</div>
+        <div class="rule-body">
+          <h3>인터페이스 구현은 타입 explicit으로 둔다</h3>
+          <div class="example-pair">
+            <div class="example good">
+              <div class="example-label">올바른 사용</div>
+              <pre><code>public sealed class TooltipButton : ClickableInterface, TooltipInterface
+{
+    void ClickableInterface.Click()
+    {
+    }
+
+    string TooltipInterface.TooltipText =&gt; tooltipText;
+}</code></pre>
+            </div>
+            <div class="example bad">
+              <div class="example-label">잘못된 사용</div>
+              <pre><code>public sealed class TooltipButton : ClickableInterface, TooltipInterface
+{
+    public void Click()
+    {
+    }
+
+    public string TooltipText =&gt; tooltipText;
+}</code></pre>
+            </div>
+          </div>
+          <p>인터페이스 멤버는 public으로 노출하지 않고 InterfaceName.MemberName 형태로 구현한다.</p>
+        </div>
+      </article>
+      <article class="rule-card">
+        <div class="rule-index">24</div>
         <div class="rule-body">
           <h3>멤버 섹션은 const, readonly, static, member 순서로 둔다</h3>
           <div class="example-pair">
