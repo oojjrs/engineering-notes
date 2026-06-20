@@ -158,11 +158,16 @@
       text-transform: uppercase;
     }
 
-    .purpose-summary p {
+    .purpose-summary ul {
       margin: 8px 0 0;
+      padding-left: 18px;
       max-width: 980px;
       color: var(--text);
       font-size: 15px;
+    }
+
+    .purpose-summary li {
+      margin: 5px 0;
     }
 
     section {
@@ -322,7 +327,14 @@
 
     <section class="purpose-summary" aria-label="컨벤션 목적">
       <strong>목적</strong>
-      <p>이 컨벤션은 IDE와 표준 도구가 자동 처리하는 기준을 최대한 그대로 써서, 수동 코딩 중 코드 모양을 고민하는 시간을 0에 가깝게 만드는 규칙이다. 동사-함수, 명사-변수처럼 컨텍스트 정보를 일관되게 유지해 도메인 숙련도가 높아질수록 코드 분석 속도도 0에 가까워지게 하며, 최종 검수와 수동 코딩 기준을 맞추기 위해 AI에게도 동일하게 요구한다.</p>
+      <ul>
+        <li>IDE와 표준 도구의 기본 규칙을 최대한 그대로 쓴다.</li>
+        <li>코드 모양을 고민하는 시간을 0에 가깝게 줄인다.</li>
+        <li>수동 코딩 중 판단 기준을 단순하게 유지한다.</li>
+        <li>동사-함수, 명사-변수처럼 컨텍스트 정보를 일관되게 둔다.</li>
+        <li>도메인 숙련도가 높아질수록 코드 분석 속도가 0에 가까워지게 한다.</li>
+        <li>최종 검수와 수동 코딩 기준을 맞추기 위해 AI에게도 동일하게 요구한다.</li>
+      </ul>
     </section>
 
     <section class="reference-strip" aria-label="상위 기준">
