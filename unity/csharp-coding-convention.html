@@ -830,7 +830,7 @@ RewardBucket</code></pre>
       <article class="rule-card">
         <div class="rule-index">21</div>
         <div class="rule-body">
-          <h3>클래스 내부 순서를 고정한다</h3>
+          <h3>클래스 내부 섹션은 변수, 속성, 이벤트, 함수 순서로 둔다</h3>
           <div class="example-pair">
             <div class="example good">
               <div class="example-label">올바른 사용</div>
@@ -849,7 +849,7 @@ public int Count { get; }
 private enum StateEnum { }</code></pre>
             </div>
           </div>
-          <p>inner enum, inner struct, inner class, 멤버, 속성, 이벤트, 함수 순서다.</p>
+          <p>inner enum, inner struct, inner class 다음은 변수 &gt; 속성 &gt; 이벤트 &gt; 함수 순서다.</p>
         </div>
       </article>
       <article class="rule-card">
@@ -931,24 +931,24 @@ private enum StateEnum { }</code></pre>
           <div class="example-pair">
             <div class="example good">
               <div class="example-label">올바른 사용</div>
-              <pre><code>public sealed class TooltipButton : ClickableInterface, TooltipInterface
+              <pre><code>public sealed class TooltipButton : TooltipInterface
 {
     string TooltipInterface.TooltipText =&gt; tooltipText;
 
-    void ClickableInterface.Click()
+    void TooltipInterface.ShowTooltip()
     {
     }
 }</code></pre>
             </div>
             <div class="example bad">
               <div class="example-label">잘못된 사용</div>
-              <pre><code>public sealed class TooltipButton : ClickableInterface, TooltipInterface
+              <pre><code>public sealed class TooltipButton : TooltipInterface
 {
-    public void Click()
+    public string TooltipText =&gt; tooltipText;
+
+    public void ShowTooltip()
     {
     }
-
-    public string TooltipText =&gt; tooltipText;
 }</code></pre>
             </div>
           </div>
