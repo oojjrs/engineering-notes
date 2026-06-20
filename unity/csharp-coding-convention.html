@@ -855,6 +855,78 @@ private enum StateEnum { }</code></pre>
       <article class="rule-card">
         <div class="rule-index">22</div>
         <div class="rule-body">
+          <h3>상속 구현은 부모 선언 순서대로 둔다</h3>
+          <div class="example-pair">
+            <div class="example good">
+              <div class="example-label">올바른 사용</div>
+              <pre><code>public sealed class RewardButton : ButtonBase, ClickableInterface, TooltipInterface
+{
+    private int buttonIndex;
+    private int clickableCount;
+    private int tooltipCount;
+    private int rewardCount;
+
+    public bool IsButtonActive { get; }
+    public bool IsClickable { get; }
+    public string TooltipText { get; }
+    public int RewardCount { get; }
+
+    public RewardButton()
+    {
+    }
+
+    protected override void RefreshButton()
+    {
+    }
+
+    public void Click()
+    {
+    }
+
+    public void ShowTooltip()
+    {
+    }
+
+    public void GiveReward()
+    {
+    }
+}</code></pre>
+            </div>
+            <div class="example bad">
+              <div class="example-label">잘못된 사용</div>
+              <pre><code>public sealed class RewardButton : ButtonBase, TooltipInterface, ClickableInterface
+{
+    private int rewardCount;
+    private int tooltipCount;
+    private int buttonIndex;
+
+    public int RewardCount { get; }
+    public string TooltipText { get; }
+
+    public void GiveReward()
+    {
+    }
+
+    public void ShowTooltip()
+    {
+    }
+
+    protected override void RefreshButton()
+    {
+    }
+
+    public RewardButton()
+    {
+    }
+}</code></pre>
+            </div>
+          </div>
+          <p>부모 &gt; 자식 순서다. 부모 간에는 상속 선언 순서를 따르고, 여러 인터페이스의 선언과 구현은 abc순으로 둔다. 생성자는 함수 중 가장 먼저 둔다.</p>
+        </div>
+      </article>
+      <article class="rule-card">
+        <div class="rule-index">23</div>
+        <div class="rule-body">
           <h3>멤버 섹션은 const, readonly, static, member 순서로 둔다</h3>
           <div class="example-pair">
             <div class="example good">
