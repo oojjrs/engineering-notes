@@ -933,11 +933,11 @@ private enum StateEnum { }</code></pre>
               <div class="example-label">올바른 사용</div>
               <pre><code>public sealed class TooltipButton : ClickableInterface, TooltipInterface
 {
+    string TooltipInterface.TooltipText =&gt; tooltipText;
+
     void ClickableInterface.Click()
     {
     }
-
-    string TooltipInterface.TooltipText =&gt; tooltipText;
 }</code></pre>
             </div>
             <div class="example bad">
