@@ -141,6 +141,30 @@
       color: #ffffff;
     }
 
+    .purpose-summary {
+      margin: 0 0 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(125, 211, 252, 0.28);
+      border-radius: 8px;
+      background: rgba(8, 13, 21, 0.92);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+    }
+
+    .purpose-summary strong {
+      display: block;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .purpose-summary p {
+      margin: 8px 0 0;
+      max-width: 980px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
     section {
       margin-top: 18px;
       border: 1px solid var(--line);
@@ -295,6 +319,11 @@
         <p class="subtitle">Unity C# 코드와 문서 내 C# 예시를 작성할 때 적용하는 사용자 기준. 예시를 먼저 보고, 설명은 필요한 만큼만 확인한다.</p>
       </div>
     </header>
+
+    <section class="purpose-summary" aria-label="컨벤션 목적">
+      <strong>목적</strong>
+      <p>이 컨벤션은 IDE와 표준 도구가 자동 처리하는 기준을 최대한 그대로 써서, 수동 코딩 중 코드 모양을 고민하는 시간을 0에 가깝게 만드는 규칙이다. 동사-함수, 명사-변수처럼 컨텍스트 정보를 일관되게 유지해 도메인 숙련도가 높아질수록 코드 분석 속도도 0에 가까워지게 하며, 최종 검수와 수동 코딩 기준을 맞추기 위해 AI에게도 동일하게 요구한다.</p>
+    </section>
 
     <section class="reference-strip" aria-label="상위 기준">
       <div>
