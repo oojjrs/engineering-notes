@@ -855,6 +855,51 @@ private enum StateEnum { }</code></pre>
       <article class="rule-card">
         <div class="rule-index">22</div>
         <div class="rule-body">
+          <h3>각 카테고리 내부는 abc순으로 둔다</h3>
+          <div class="example-pair">
+            <div class="example good">
+              <div class="example-label">올바른 사용</div>
+              <pre><code>private int alphaCount;
+private int betaCount;
+private int rewardCount;
+
+public bool IsActive { get; }
+public int RewardCount { get; }
+public string TooltipText { get; }
+
+public event Action Changed;
+public event Action Selected;
+
+public void ApplyReward()
+{
+}
+
+public void RefreshTooltip()
+{
+}</code></pre>
+            </div>
+            <div class="example bad">
+              <div class="example-label">잘못된 사용</div>
+              <pre><code>private int rewardCount;
+private int alphaCount;
+public void ApplyReward()
+{
+}
+public bool IsActive { get; }
+public event Action Selected;
+public string TooltipText { get; }
+public event Action Changed;
+public void RefreshTooltip()
+{
+}</code></pre>
+            </div>
+          </div>
+          <p>abc 정렬은 섹션 순서, 상속 구현 순서, 생성자 우선 규칙을 먼저 적용한 뒤 같은 상속 그룹의 같은 카테고리 내부에서만 적용한다. abc 정렬 때문에 부모/인터페이스 구현 그룹을 섞지 않는다.</p>
+        </div>
+      </article>
+      <article class="rule-card">
+        <div class="rule-index">23</div>
+        <div class="rule-body">
           <h3>상속 구현은 부모 선언 순서대로 둔다</h3>
           <div class="example-pair">
             <div class="example good">
@@ -925,7 +970,7 @@ private enum StateEnum { }</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">23</div>
+        <div class="rule-index">24</div>
         <div class="rule-body">
           <h3>인터페이스 구현은 타입 explicit으로 둔다</h3>
           <div class="example-pair">
@@ -956,7 +1001,7 @@ private enum StateEnum { }</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">24</div>
+        <div class="rule-index">25</div>
         <div class="rule-body">
           <h3>멤버 섹션은 const, readonly, static, member 순서로 둔다</h3>
           <div class="example-pair">
