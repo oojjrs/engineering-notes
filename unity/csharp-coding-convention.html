@@ -630,6 +630,57 @@ public enum PlayerModeEnum
       <article class="rule-card">
         <div class="rule-index">12</div>
         <div class="rule-body">
+          <h3>중첩 타입은 enum, struct, interface, class 순서로 둔다</h3>
+          <div class="example-pair">
+            <div class="example good">
+              <div class="example-label">올바른 사용</div>
+              <pre><code>public sealed class PlayerController
+{
+    private enum StateEnum
+    {
+    }
+
+    private struct Entry
+    {
+    }
+
+    private interface CacheInterface
+    {
+    }
+
+    private sealed class Cache
+    {
+    }
+}</code></pre>
+            </div>
+            <div class="example bad">
+              <div class="example-label">잘못된 사용</div>
+              <pre><code>public sealed class PlayerController
+{
+    private sealed class Cache
+    {
+    }
+
+    private interface CacheInterface
+    {
+    }
+
+    private enum StateEnum
+    {
+    }
+
+    private struct Entry
+    {
+    }
+}</code></pre>
+            </div>
+          </div>
+          <p>한 파일의 여러 타입 선언은 대표 정의 1개 원칙 때문에 보통 중첩 타입에만 허용한다. 중첩 타입 선언 순서는 enum &gt; struct &gt; interface &gt; class다.</p>
+        </div>
+      </article>
+      <article class="rule-card">
+        <div class="rule-index">13</div>
+        <div class="rule-body">
           <h3>파일명과 클래스명은 명사로 둔다</h3>
           <div class="example-pair">
             <div class="example good">
@@ -651,7 +702,7 @@ public sealed class MovePlayer
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">13</div>
+        <div class="rule-index">14</div>
         <div class="rule-body">
           <h3>Unity 객체 이름과 스크립트 이름을 맞춘다</h3>
           <div class="example-pair">
@@ -679,7 +730,7 @@ Class: BagPanel</code></pre>
         <h2>단어</h2>
       </div>
       <article class="rule-card">
-        <div class="rule-index">14</div>
+        <div class="rule-index">15</div>
         <div class="rule-body">
           <h3>관용 다음절어는 한 단어처럼 취급한다</h3>
           <div class="example-pair">
@@ -706,7 +757,7 @@ FileName</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">15</div>
+        <div class="rule-index">16</div>
         <div class="rule-body">
           <h3>다른 키워드의 부분 문자열이면 피한다</h3>
           <div class="example-pair">
@@ -725,7 +776,7 @@ IntermissionState</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">16</div>
+        <div class="rule-index">17</div>
         <div class="rule-body">
           <h3>복수 그룹은 현재 -s/-es를 허용한다</h3>
           <div class="example-pair">
@@ -753,7 +804,7 @@ RewardBucket</code></pre>
         <h2>구문과 구성</h2>
       </div>
       <article class="rule-card">
-        <div class="rule-index">17</div>
+        <div class="rule-index">18</div>
         <div class="rule-body">
           <h3>외부 생명주기 객체는 읽기 전용 속성으로 둔다</h3>
           <div class="example-pair">
@@ -770,7 +821,7 @@ RewardBucket</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">18</div>
+        <div class="rule-index">19</div>
         <div class="rule-body">
           <h3>var를 적극 사용한다</h3>
           <div class="example-pair">
@@ -788,7 +839,7 @@ RewardBucket</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">19</div>
+        <div class="rule-index">20</div>
         <div class="rule-body">
           <h3>신규 using 형태는 사용하지 않는다</h3>
           <div class="example-pair">
@@ -807,7 +858,7 @@ RewardBucket</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">20</div>
+        <div class="rule-index">21</div>
         <div class="rule-body">
           <h3>sealed는 override 앞에 둔다</h3>
           <div class="example-pair">
@@ -828,7 +879,7 @@ RewardBucket</code></pre>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">21</div>
+        <div class="rule-index">22</div>
         <div class="rule-body">
           <h3>클래스 내부 섹션은 변수, 속성, 이벤트, 함수 순서로 둔다</h3>
           <div class="example-pair">
@@ -836,6 +887,7 @@ RewardBucket</code></pre>
               <div class="example-label">올바른 사용</div>
               <pre><code>private enum StateEnum { }
 private struct Entry { }
+private interface CacheInterface { }
 private sealed class Cache { }
 private const int MaxCount = 10;
 public int Count { get; }
@@ -849,11 +901,11 @@ public int Count { get; }
 private enum StateEnum { }</code></pre>
             </div>
           </div>
-          <p>inner enum, inner struct, inner class 다음은 변수 &gt; 속성 &gt; 이벤트 &gt; 함수 순서다.</p>
+          <p>inner enum, inner struct, inner interface, inner class 다음은 변수 &gt; 속성 &gt; 이벤트 &gt; 함수 순서다.</p>
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">22</div>
+        <div class="rule-index">23</div>
         <div class="rule-body">
           <h3>각 카테고리 내부는 abc순으로 둔다</h3>
           <div class="example-pair">
@@ -898,7 +950,7 @@ public void RefreshTooltip()
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">23</div>
+        <div class="rule-index">24</div>
         <div class="rule-body">
           <h3>상속 구현은 부모 선언 순서대로 둔다</h3>
           <div class="example-pair">
@@ -970,7 +1022,7 @@ public void RefreshTooltip()
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">24</div>
+        <div class="rule-index">25</div>
         <div class="rule-body">
           <h3>인터페이스 구현은 타입 explicit으로 둔다</h3>
           <div class="example-pair">
@@ -1001,7 +1053,7 @@ public void RefreshTooltip()
         </div>
       </article>
       <article class="rule-card">
-        <div class="rule-index">25</div>
+        <div class="rule-index">26</div>
         <div class="rule-body">
           <h3>멤버 섹션은 const, readonly, static, member 순서로 둔다</h3>
           <div class="example-pair">
