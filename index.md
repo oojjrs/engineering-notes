@@ -9,6 +9,7 @@ permalink: /
 ## 문서
 
 - [Codex 공통 작업 지침](./codex/common-work-guidelines.html)
+- [Design.html / Guidelines.html 생성 기준](./codex/guideline-design-generation.review.html)
 - [Unity C# 코딩 컨벤션](./unity/csharp-coding-convention.html)
 
 ---
