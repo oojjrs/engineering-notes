@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'ko-KR' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101419">
+    <title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    {% seo %}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell header-inner">
+        <a class="site-brand" href="{{ "/" | relative_url }}" aria-label="Engineering Notes 홈">
+          <span class="brand-mark">EN</span>
+          <span class="brand-name">Engineering Notes</span>
+        </a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="{{ "/codex/" | relative_url }}">Codex</a>
+          <a href="{{ "/unity/" | relative_url }}">Unity</a>
+          <a href="{{ "/essays/debuggingless-development/" | relative_url }}">Essay</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>{{ content }}</main>
+
+    <footer class="site-footer">
+      <div class="site-shell footer-inner">
+        <p><strong>Engineering Notes</strong><br>생각을 다시 사용할 수 있도록 기록합니다.</p>
+        <p class="footer-meta">Built with GitHub Pages<br>© {{ "now" | date: "%Y" }}</p>
+      </div>
+    </footer>
+  </body>
+</html>

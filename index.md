@@ -1,169 +1,90 @@
 ---
-layout: page
-title: "디버깅이 거의 필요 없는 시스템을 설계하기"
+layout: home
+title: "Engineering Notes"
 permalink: /
 ---
 
-[🇺🇸 English](./en/)
-
-## 문서
-
-- [Codex 공통 작업 지침](./codex/common-work-guidelines.html)
-- [Design.html / Guidelines.html 생성 기준](./codex/guideline-design-generation.review.html)
-- [Unity C# 코딩 컨벤션](./unity/csharp-coding-convention.html)
-
----
-
-# 디버깅이 거의 필요 없는 시스템을 설계하기
-
-많은 디버깅은 시스템이 너무 많은 잘못된 상태를 허용하기 때문에 발생한다.
-
-나는 디버깅을 더 잘하려 하기보다 **디버깅이 거의 필요 없는 시스템을 설계하려고 노력한다.**
-
-나는 이 접근 방식을 편의상 **Debuggingless Development**라고 부른다.
-
----
-
-많은 소프트웨어 개발에서 디버깅은 자연스러운 과정처럼 여겨진다.
-
-코드를 작성한다.  
-프로그램을 실행한다.  
-버그를 발견한다.  
-디버깅한다.  
-수정한다.  
-그리고 다시 반복한다.
-
-하지만 시간이 지나면서 나는 이 과정 자체가 문제일 수도 있다는 생각을 하게 되었다.
-
-> 만약 어떤 시스템이 자주 디버깅을 필요로 한다면, 그 아키텍처는 잘못된 것일 가능성이 높다.
-
-나는 게임 개발을 하면서 **Debuggingless Development**라고 편의상 부르는 개발 접근 방식을 따르려고 노력해 왔다.
-
-이 용어는 업계에서 널리 쓰이는 개념은 아니다.  
-디버깅의 필요성을 최소화하도록 시스템을 설계하는 개발 스타일을 설명하기 위해 내가 붙인 이름이다.
-
-핵심은 디버깅을 완전히 없애는 것이 아니라  
-**아키텍처, 결정론적 실행, 구조적 로그를 통해 디버깅이 거의 필요하지 않은 시스템을 만드는 것**이다.
-
----
-
-## 왜 디버깅이 어려워지는가
-
-시스템이 커질수록 디버깅은 점점 더 어려워진다.
-
-그리고 그 이유는 단순한 버그 때문이 아니라 시스템 구조 때문이다.
-
-대규모 시스템에는 보통 다음과 같은 것들이 쌓이기 시작한다.
-
-- 암묵적인 상태  
-- 예측하기 어려운 실행 순서  
-- 숨겨진 의존성  
-- 시스템 간의 취약한 상호작용  
-
-이런 것들이 누적되면 디버깅은 버그를 고치는 작업이 아니라  
-**시스템이 실제로 무엇을 하고 있는지 재구성하는 작업**이 된다.
-
-문제는 버그 자체가 아니라  
-**그 버그가 발생할 수 있도록 허용한 구조**인 경우가 많다.
-
----
-
-## Architecture First
-
-첫 번째 목표는 **잘못된 상태를 표현하기 어렵게 만드는 것**이다.
-
-이를 위해 시스템을 다음과 같은 방식으로 설계한다.
-
-- 데이터 소유권을 명확히 한다  
-- 생명주기 경계를 분명히 한다  
-- 상태 전이를 명시적으로 만든다  
-- 변경 가능한 지점을 제한한다  
-
-좋은 아키텍처는 특정 버그를 고치는 것이 아니라  
-**그 종류의 버그 자체가 발생하지 못하게 만든다.**
-
----
-
-## Deterministic Execution
-
-핵심 시스템은 가능한 한 **예측 가능한 순서로 실행**되어야 한다.
-
-결정론적 실행은 다음을 가능하게 만든다.
-
-- 시스템 동작을 이해하기 쉬움  
-- 문제 재현이 쉬움  
-- 버전 간 동작 비교 가능  
-- 회귀 버그 탐지  
-
-특히 여러 시스템이 매 프레임 상호작용하는 게임 개발에서는 매우 중요한 성질이다.
-
----
-
-## Structural Logging
-
-로그는 임시 디버깅 출력이 아니라  
-**시스템 구조의 일부**여야 한다.
-
-중요한 이벤트는 항상 로그를 남긴다.
-
-- 시스템 초기화  
-- 시스템 경계 지점  
-- 엔티티 생명주기  
-- 게임플레이 트리거  
-- 상태 전이  
-
-이 로그들은 코드에 영구적으로 남는다.
-
-그래서 빌드 간 실행 흐름을 비교할 수 있고  
-많은 문제는 **로그 비교만으로도 바로 드러난다.**
-
----
-
-## Debugging as a last resort
-
-디버거 자체가 쓸모없다는 뜻은 아니다.
-
-브레이크포인트  
-스텝 실행  
-메모리 확인  
-
-이런 도구들은 여전히 유용하다.
-
-다만 그것이 **시스템을 이해하는 기본 방법이 되어서는 안 된다.**
-
-대부분의 문제는 다음을 통해 먼저 드러나야 한다.
-
-- 아키텍처 제약  
-- 결정론적 실행  
-- 구조적 로그  
-
-실제로 깊은 디버깅이 필요한 경우는 매우 드물다.
-
-내 경험에서는 보통 **1년에 한두 번 정도**다.
-
-그리고 흥미롭게도 그런 경우는 대부분  
-내 코드가 아니라 **엔진 레벨 문제**였다.
-
----
-
-## 결론
-
-디버깅은 완전히 사라지지 않는다.
-
-하지만 **디버깅이 필요한 빈도**는 시스템 아키텍처에 크게 영향을 받는다.
-
-결국 많은 경우 최고의 디버깅 전략은
-
-> 버그가 생기기 어려운 시스템을 설계하는 것이다.
-
----
-
-## 질문
-
-이런 개발 방식은 얼마나 일반적일까?
-
-다른 개발자들은  
-디버깅 자체를 줄이기 위한 시스템 설계를 의식적으로 하고 있을까?
-
-아니면 실제 소프트웨어에서는  
-잦은 디버깅이 결국 불가피한 것일까?
+<section class="hero">
+  <p class="eyebrow">SOFTWARE · GAME DEVELOPMENT · AI WORKFLOW</p>
+  <h1>덜 헤매고,<br>더 오래 쓰는 설계.</h1>
+  <p class="hero-copy">
+    소프트웨어 아키텍처와 개발 규칙을 실제로 다시 찾아볼 수 있는 형태로 정리합니다.
+    짧은 메모보다 오래 유지되는 기준과 판단 근거를 남기는 문서 저장소입니다.
+  </p>
+  <div class="hero-actions">
+    <a class="button button-primary" href="#notes">문서 둘러보기</a>
+    <a class="button button-secondary" href="https://github.com/{{ site.github.repository_nwo }}">GitHub 저장소</a>
+  </div>
+</section>
+
+<section class="section" id="notes">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">COLLECTIONS</p>
+      <h2>주제별 문서</h2>
+    </div>
+    <p>현재 3개 주제, 4개 문서를 공개하고 있습니다.</p>
+  </div>
+
+  <div class="collection-grid">
+    <a class="collection-card collection-card-codex" href="{{ "/codex/" | relative_url }}">
+      <span class="card-index">01</span>
+      <span class="card-label">AI WORKFLOW</span>
+      <h3>Codex</h3>
+      <p>에이전트가 일관된 결과물을 만들기 위한 작업 원칙과 문서 생성 기준.</p>
+      <span class="card-link">문서 2개 보기 <span aria-hidden="true">→</span></span>
+    </a>
+
+    <a class="collection-card collection-card-unity" href="{{ "/unity/" | relative_url }}">
+      <span class="card-index">02</span>
+      <span class="card-label">GAME DEVELOPMENT</span>
+      <h3>Unity</h3>
+      <p>Unity 프로젝트에서 바로 적용할 수 있는 C# 작성 규칙과 구조적 기준.</p>
+      <span class="card-link">문서 1개 보기 <span aria-hidden="true">→</span></span>
+    </a>
+
+    <a class="collection-card collection-card-essay" href="{{ "/essays/debuggingless-development/" | relative_url }}">
+      <span class="card-index">03</span>
+      <span class="card-label">ENGINEERING ESSAY</span>
+      <h3>개발 철학</h3>
+      <p>디버깅 기술보다 버그가 생기기 어려운 시스템 설계를 먼저 생각합니다.</p>
+      <span class="card-link">에세이 읽기 <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="section latest-section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">ALL NOTES</p>
+      <h2>전체 문서</h2>
+    </div>
+  </div>
+
+  <div class="note-list">
+    <a class="note-row" href="{{ "/codex/common-work-guidelines.html" | relative_url }}">
+      <span class="note-type">GUIDELINE</span>
+      <span class="note-title">Codex 공통 작업 지침</span>
+      <span class="note-topic">Codex</span>
+      <span class="note-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="note-row" href="{{ "/codex/guideline-design-generation.review.html" | relative_url }}">
+      <span class="note-type">REVIEW</span>
+      <span class="note-title">Design.html / Guidelines.html 생성 기준</span>
+      <span class="note-topic">Codex</span>
+      <span class="note-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="note-row" href="{{ "/unity/csharp-coding-convention.html" | relative_url }}">
+      <span class="note-type">CONVENTION</span>
+      <span class="note-title">Unity C# 코딩 컨벤션</span>
+      <span class="note-topic">Unity</span>
+      <span class="note-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="note-row" href="{{ "/essays/debuggingless-development/" | relative_url }}">
+      <span class="note-type">ESSAY</span>
+      <span class="note-title">디버깅이 거의 필요 없는 시스템을 설계하기</span>
+      <span class="note-topic">Architecture</span>
+      <span class="note-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>

@@ -1,12 +1,11 @@
----
+﻿---
 layout: page
 title: "Designing Systems That Rarely Need Debugging"
+description: "A development approach for reducing debugging through architecture, deterministic execution, and structural logging."
 permalink: /en/
 ---
 
-[🇰🇷 한국어](../)
-
-# Designing Systems That Rarely Need Debugging
+[← All notes]({{ "/" | relative_url }}) · [한국어]({{ "/essays/debuggingless-development/" | relative_url }})
 
 Most debugging happens because systems allow too many invalid states.
 
