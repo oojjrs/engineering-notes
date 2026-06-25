@@ -280,13 +280,38 @@
         justify-content: flex-start;
       }
     }
+
+    /* Persistent document navigation */
+    header { position: sticky; top: 0; z-index: 30; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; }
+    .header-copy { min-width: 0; }
+    .header-inner h1 { font-size: clamp(25px, 4vw, 40px); }
+    .header-inner .subtitle { margin-top: 6px; font-size: 13px; }
+    .home-link { flex: 0 0 auto; padding: 8px 12px; border: 1px solid rgba(255,255,255,.34); border-radius: 8px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 800; }
+    .home-link:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .document-layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 18px; align-items: start; }
+    .document-layout .toc { position: sticky; top: 128px; display: grid; gap: 4px; margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); box-shadow: var(--shadow); }
+    .document-layout .toc a { min-height: 0; padding: 8px 10px; border: 0; border-radius: 6px; background: transparent; }
+    .document-layout .toc a:hover { background: var(--accent-soft); }
+    .document-content section { scroll-margin-top: 128px; }
+    @media (max-width: 760px) {
+      .header-inner .subtitle { display: none; }
+      .header-copy { overflow: hidden; }
+      .header-inner h1 { overflow: hidden; font-size: 20px; text-overflow: ellipsis; white-space: nowrap; }
+      .document-layout { grid-template-columns: 1fr; }
+      .document-layout .toc { top: 73px; z-index: 15; display: flex; overflow-x: auto; margin: 0 -6px; }
+      .document-layout .toc a { flex: 0 0 auto; white-space: nowrap; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <h1>Codex 공통 작업 지침</h1>
-      <p class="subtitle">여러 프로젝트에서 반복되는 작업 운영 규칙을 한곳에 모은 기준 문서. 프로젝트별 기획과 아트 방향은 각 저장소의 <code>Design.html</code>에 두고, 공통 작업 방식은 이 문서를 우선 참조한다.</p>
+      <div class="header-copy">
+        <h1>Codex 공통 작업 지침</h1>
+        <p class="subtitle">여러 프로젝트에서 반복되는 작업 운영 규칙을 한곳에 모은 기준 문서. 프로젝트별 기획과 아트 방향은 각 저장소의 <code>Design.html</code>에 두고, 공통 작업 방식은 이 문서를 우선 참조한다.</p>
+      </div>
+      <a class="home-link" href="../">Home</a>
     </div>
   </header>
 
@@ -300,16 +325,8 @@
       </ul>
     </section>
 
-    <div class="reference-strip" aria-label="관련 문서">
-      <div>
-        <strong>Canonical URL</strong>
-        <span>프로젝트 기획 문서 상단에서 이 주소를 링크한다.</span>
-      </div>
-      <a href="https://oojjrs.github.io/engineering-notes/codex/common-work-guidelines.html">공통 작업 지침</a>
-      <a href="https://oojjrs.github.io/engineering-notes/unity/csharp-coding-convention.html">Unity C# 컨벤션</a>
-      <a href="https://github.com/oojjrs/engineering-notes">GitHub</a>
-    </div>
 
+    <div class="document-layout">
     <nav class="toc" aria-label="문서 섹션">
       <a href="#start">시작 순서</a>
       <a href="#approval">승인 경계</a>
@@ -319,6 +336,7 @@
       <a href="#art">아트와 UI</a>
       <a href="#reporting">보고</a>
     </nav>
+    <div class="document-content">
 
     <section id="start">
       <div class="section-heading"><span>01</span><h2>시작 순서</h2></div>
@@ -452,6 +470,8 @@
         </ul>
       </div>
     </section>
+    </div>
+    </div>
   </main>
 </body>
 </html>
