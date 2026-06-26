@@ -169,6 +169,27 @@
       margin: 0 0 8px;
       font-size: 15px;
     }
+    .sample.include {
+      border-color: #78a88d;
+      background: #dcece4;
+      box-shadow: inset 4px 0 0 #2f8f5b;
+    }
+
+    .sample.exclude {
+      border-color: #c28a79;
+      background: #f0dfd8;
+      box-shadow: inset 4px 0 0 #b5533f;
+    }
+
+    .sample.include .badge {
+      background: #c2e5d1;
+      color: #19643d;
+    }
+
+    .sample.exclude .badge {
+      background: #efc8bc;
+      color: #8a2f20;
+    }
 
     .badge {
       display: inline-block;
@@ -301,11 +322,11 @@
       <section id="scope">
         <h2>문서 범위</h2>
         <div class="split">
-          <div class="sample">
+          <div class="sample include">
             <h4><span class="badge">Include</span>기획서에 남길 것</h4>
             <p><code>Design.html</code>에는 프로젝트의 목표, 사용자 경험, 시스템 구조, 콘텐츠 기준, 결정 이유, 현재 구현과의 차이를 남깁니다.</p>
           </div>
-          <div class="sample">
+          <div class="sample exclude">
             <h4><span class="badge">Exclude</span>기획서에서 뺄 것</h4>
             <p>작성자용 절차, 도구 사용법, 운영 메모는 <code>Design.html</code> 본문에 넣지 않습니다.</p>
           </div>
