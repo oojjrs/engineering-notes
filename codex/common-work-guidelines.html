@@ -343,9 +343,7 @@
       <div class="body">
         <ol>
           <li>사용자의 최신 지시와 현재 대화의 작업 범위를 우선한다.</li>
-          <li>저장소에 <code>AGENTS.md</code>가 있으면 먼저 읽는다.</li>
           <li><code>Design.html</code>이 있으면 작업 전에 읽고, 상단의 공통 작업 지침 링크를 함께 확인한다.</li>
-          <li>아직 이관 전인 저장소에 <code>Guidelines.html</code>이 있으면 현재 운영 상태와 큐 카드만 참고한다.</li>
           <li><code>README.md</code>, 빌드 문서, 프레임워크 문서처럼 실제 실행에 필요한 문서를 확인한다.</li>
           <li>작업 전 <code>git status --short --branch</code>로 더티 워크트리와 현재 브랜치를 확인한다.</li>
         </ol>
@@ -399,7 +397,7 @@
           <li><code>git add -A</code>로 넓게 담지 말고, 작업 소유 파일만 좁게 스테이징한다.</li>
           <li>커밋 전 <code>git diff --cached --name-status</code>와 필요한 경우 <code>git diff --cached</code>로 범위를 확인한다.</li>
           <li>여러 저장소를 동시에 다룰 때는 저장소별로 독립 커밋한다.</li>
-          <li><code>Design.html</code>, <code>Guidelines.html</code>, <code>DesignAssets</code>, <code>GuidelinesAssets</code>는 문서 작업이 명시된 경우에만 커밋에 포함한다.</li>
+          <li><code>Design.html</code>과 <code>DesignAssets</code>는 기획 문서 작업이 명시된 경우에만 커밋에 포함한다.</li>
         </ul>
       </div>
     </section>
@@ -410,15 +408,11 @@
         <div class="rule-grid">
           <article class="rule-card">
             <strong>공통 작업 지침</strong>
-            <p>반복되는 작업 운영 규칙, 승인 경계, Git 규칙, 검증 원칙을 둔다.</p>
+            <p>반복되는 작업 운영 규칙, 승인 경계, Git 규칙, 검증 원칙을 이 저장소에서 직접 관리한다.</p>
           </article>
           <article class="rule-card">
             <strong>Design.html</strong>
             <p>프로젝트의 목표, 기획 의도, 아트 스타일, UX 기준, 결정 사유를 둔다.</p>
-          </article>
-          <article class="rule-card">
-            <strong>Guidelines.html</strong>
-            <p>이관 전 저장소에서는 큐 상태와 남은 운영 정보만 참고한다. 중복 규칙은 공통 문서로 옮기고, 프로젝트 고유 기획은 <code>Design.html</code>로 옮긴다.</p>
           </article>
           <article class="rule-card">
             <strong>코딩 컨벤션</strong>

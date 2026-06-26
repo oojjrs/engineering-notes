@@ -31,7 +31,7 @@ permalink: /
       <span class="card-index">01</span>
       <span class="card-label">AI WORKFLOW</span>
       <h3>Codex</h3>
-      <p>에이전트가 일관된 결과물을 만들기 위한 작업 원칙과 문서 생성 기준.</p>
+      <p>에이전트가 일관된 결과물을 만들기 위한 공용 작업 원칙과 기획서 생성 기준.</p>
       <span class="card-link">문서 2개 보기 <span aria-hidden="true">→</span></span>
     </a>
 
@@ -70,7 +70,7 @@ permalink: /
     </a>
     <a class="note-row" href="{{ "/codex/guideline-design-generation.review.html" | relative_url }}">
       <span class="note-type">REVIEW</span>
-      <span class="note-title">Design.html / Guidelines.html 생성 기준</span>
+      <span class="note-title">Design.html 기획서 생성 기준</span>
       <span class="note-topic">Codex</span>
       <span class="note-arrow" aria-hidden="true">↗</span>
     </a>

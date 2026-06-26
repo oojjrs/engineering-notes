@@ -16,8 +16,8 @@ permalink: /codex/
 
   <a class="document-card" href="./guideline-design-generation.review.html">
     <span class="document-kind">REVIEW</span>
-    <h2>Design.html / Guidelines.html 생성 기준</h2>
-    <p>두 종류의 HTML 문서가 맡아야 할 역할과 정보 구조, 시각 표현 기준을 비교하고 정의합니다.</p>
+    <h2>Design.html 기획서 생성 기준</h2>
+    <p>프로젝트별 Design.html 기획서가 담아야 할 정보 구조와 작성 기준을 정의합니다.</p>
     <span class="card-link">문서 열기 <span aria-hidden="true">→</span></span>
   </a>
 </div>
