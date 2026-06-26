@@ -301,7 +301,7 @@
       <a href="#samples">표본 파일</a>
       <a href="#skills">스킬 정리</a>
       <a href="#validation">검증 체크리스트</a>
-      <a href="#files">보관 위치</a>
+      <a href="#files">공개본 표기</a>
     </nav>
 
     <div>
@@ -310,7 +310,7 @@
         <div class="split">
           <div class="sample">
             <h4><span class="badge">.codex</span>Codex 실행 규칙</h4>
-            <p><code>C:\Users\oojjr\.codex\skills\project-guidelines-builder\SKILL.md</code>가 가이드라인 생성과 유지 규칙의 실제 스킬 원본입니다. 프로젝트별 기획 문서 규칙은 현재 <code>overlord-design-document</code> 같은 전용 스킬이 담당합니다.</p>
+            <p><code>project-guidelines-builder</code> 스킬이 가이드라인 생성과 유지 규칙의 실제 원본입니다. 프로젝트별 기획 문서 규칙은 현재 <code>overlord-design-document</code> 같은 전용 스킬이 담당합니다.</p>
           </div>
           <div class="sample">
             <h4><span class="badge">Review</span>눈으로 보는 검토본</h4>
@@ -436,22 +436,22 @@
           <div class="sample">
             <h4><span class="badge">Guideline</span>롤링 표본</h4>
             <p>새 <code>Guidelines.html</code> 작업은 현재 프로젝트 문서를 먼저 보고, 그 다음 최근 편집·검증된 live <code>Guidelines.html</code>을 기준으로 삼습니다.</p>
-            <p>역사적 seed: <code>H:\ImageStudio\Guidelines.html</code>. 스냅샷: <code>samples\ImageStudio.Guidelines.sample.html</code></p>
+            <p>역사적 seed: ImageStudio의 <code>Guidelines.html</code>. 공개본에는 로컬 원본 경로 대신 문서 유형과 검증 기준만 남깁니다.</p>
           </div>
           <div class="sample">
             <h4><span class="badge">Design</span>롤링 표본</h4>
             <p>새 <code>Design.html</code> 작업은 현재 프로젝트 문서를 먼저 보고, 그 다음 최근 편집·검증된 live <code>Design.html</code>을 기준으로 삼습니다.</p>
-            <p>역사적 seed: <code>H:\Overlord\Design.html</code>. 스냅샷: <code>samples\Overlord.Design.sample.html</code></p>
+            <p>역사적 seed: Overlord의 <code>Design.html</code>. 공개본에는 로컬 원본 경로 대신 문서 유형과 검증 기준만 남깁니다.</p>
           </div>
         </div>
-        <p class="note">스냅샷은 이 리뷰 문서와 함께 보기 위한 참고본입니다. 실제 프로젝트 작업에서는 항상 live 경로의 최신 파일과 최근 편집 문서를 다시 열어야 합니다.</p>
+        <p class="note">공개본은 특정 로컬 파일 위치를 노출하지 않고, 실제 프로젝트 작업에서는 현재 프로젝트의 최신 live 문서와 최근 편집·검증 문서를 다시 열어 기준으로 삼습니다.</p>
       </section>
       <section id="skills">
         <h2>스킬 정리</h2>
         <ul>
           <li><code>project-guidelines-builder</code>는 일반적인 <code>Guidelines.html</code> 생성과 유지 규칙을 담당합니다.</li>
           <li><code>Design.html</code> 생성 규칙은 별도 스킬로 정돈하고, 범용 작업에서는 최신 편집·검증 live 문서를 롤링 표본으로 삼습니다. <code>overlord-design-document</code>는 Overlord 자체 작업의 전용 스킬입니다.</li>
-          <li>이미지 작업 규칙은 <code>image-first-art-workflow</code>가 담당하며, 사용자 검토본은 <code>C:\Users\oojjr\Documents\Codex\GlobalReviews\image-first-art-workflow.review.html</code>입니다.</li>
+          <li>이미지 작업 규칙은 <code>image-first-art-workflow</code>가 담당하며, 사용자 검토본은 별도의 전역 리뷰 문서로 관리합니다.</li>
           <li>스킬은 고정 표본 대신 최신 편집·검증 live 문서를 우선하는 롤링 표본 정책을 명시해야 합니다.</li>
           <li>스킬은 현재 프로젝트 파일, 동봉 표본, 메모리의 우선순위를 분명히 해야 합니다.</li>
         </ul>
@@ -471,13 +471,13 @@
       </section>
 
       <section id="files">
-        <h2>보관 위치</h2>
+        <h2>공개본 표기 기준</h2>
         <ul>
-          <li>사람이 보는 리뷰본: <code>C:\Users\oojjr\Documents\Codex\GlobalReviews\guideline-design-generation.review.html</code></li>
-          <li>이미지 작업 규칙 리뷰본: <code>C:\Users\oojjr\Documents\Codex\GlobalReviews\image-first-art-workflow.review.html</code></li>
-          <li>동봉 표본: <code>C:\Users\oojjr\Documents\Codex\GlobalReviews\samples\</code></li>
-          <li>가이드라인 스킬 원본: <code>C:\Users\oojjr\.codex\skills\project-guidelines-builder\SKILL.md</code></li>
-          <li>현재 기획 문서 스킬 사례: <code>C:\Users\oojjr\.codex\skills\overlord-design-document\SKILL.md</code></li>
+          <li>사람이 보는 리뷰본: 이 공개 문서와 같은 형식의 전역 리뷰 HTML</li>
+          <li>이미지 작업 규칙 리뷰본: <code>image-first-art-workflow</code> 전역 리뷰 문서</li>
+          <li>동봉 표본: 공개 저장소에 포함된 경우에만 상대 링크로 참조</li>
+          <li>가이드라인 스킬 원본: <code>project-guidelines-builder</code></li>
+          <li>현재 기획 문서 스킬 사례: <code>overlord-design-document</code></li>
         </ul>
         <footer>작성 기준: 2026-06-15 KST. 이 문서는 프로젝트가 없는 전역 채팅에서도 확인 가능한 전역 리뷰 자료입니다.</footer>
       </section>
