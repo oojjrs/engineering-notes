@@ -8,10 +8,10 @@ alternate_url: /kr/
 
 <section class="hero">
   <p class="eyebrow">SOFTWARE · GAME DEVELOPMENT · AI WORKFLOW</p>
-  <h1>Less wandering,<br>longer-lived design.</h1>
+  <h1>Development Standards<br>and Rationale.</h1>
   <p class="hero-copy">
-    A public home for software architecture notes, development rules, and reusable engineering judgment.
-    This repository keeps durable standards and reasoning that are worth finding again later.
+    A technical document repository for Codex workflow rules, Design.html standards, Unity C# conventions, and development methodology.
+    It keeps reusable rules and decision rationale in one place.
   </p>
   <div class="hero-actions">
     <a class="button button-primary" href="#notes">Browse notes</a>

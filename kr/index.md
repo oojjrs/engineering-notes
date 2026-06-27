@@ -8,10 +8,10 @@ alternate_url: /en/
 
 <section class="hero">
   <p class="eyebrow">SOFTWARE · GAME DEVELOPMENT · AI WORKFLOW</p>
-  <h1>덜 헤매고,<br>더 오래 쓰는 설계.</h1>
+  <h1>개발 기준과<br>판단 기록.</h1>
   <p class="hero-copy">
-    소프트웨어 아키텍처와 개발 규칙을 실제로 다시 찾아볼 수 있는 형태로 정리합니다.
-    짧은 메모보다 오래 유지되는 기준과 판단 근거를 남기는 문서 저장소입니다.
+    Codex 작업 지침, Design.html 작성 기준, Unity C# 컨벤션, 개발 방법론을 한곳에 정리합니다.
+    반복해서 참고할 수 있는 규칙과 결정 근거를 남기는 기술 문서 저장소입니다.
   </p>
   <div class="hero-actions">
     <a class="button button-primary" href="#notes">문서 둘러보기</a>
