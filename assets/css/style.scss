@@ -77,8 +77,20 @@ pre code {
   font-size: 13px;
   font-weight: 900;
 }
+.site-nav-group { display: flex; align-items: center; gap: 18px; }
 .site-nav { display: flex; gap: 28px; color: var(--muted); font-size: 14px; font-weight: 700; }
-.site-nav a:hover { color: var(--accent); }
+.site-nav a:hover, .language-switch:hover { color: var(--accent); }
+.language-switch {
+  display: inline-flex;
+  min-width: 38px;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text);
+  font: 800 12px/1 Consolas, monospace;
+}
 
 .home-content { padding-bottom: 100px; }
 .hero { min-height: 590px; padding: 110px 0 90px; border-bottom: 1px solid var(--line); }
@@ -299,7 +311,9 @@ pre code {
   .site-shell { width: min(100% - 28px, 1120px); }
   .header-inner { min-height: 66px; }
   .brand-name { display: none; }
+  .site-nav-group { gap: 10px; }
   .site-nav { gap: 16px; font-size: 13px; }
+  .language-switch { min-width: 34px; min-height: 30px; }
   .hero { min-height: auto; padding: 76px 0 68px; }
   .hero h1 { font-size: 54px; }
   .section { padding-top: 72px; }

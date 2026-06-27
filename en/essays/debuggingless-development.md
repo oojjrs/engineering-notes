@@ -3,7 +3,8 @@ layout: page
 lang: en
 title: "Debuggingless Development"
 description: "A development method for reducing reactive debugging by removing logical failure paths while writing code."
-permalink: /en/
+permalink: /en/essays/debuggingless-development/
+alternate_url: /kr/essays/debuggingless-development/
 toc_items:
   - id: reactive-debugging
     label: "Reactive debugging"
@@ -23,7 +24,7 @@ toc_items:
     label: "Conclusion"
 ---
 
-[← All notes]({{ "/" | relative_url }}) · [한국어]({{ "/essays/debuggingless-development/" | relative_url }})
+[← All notes]({{ "/en/" | relative_url }}) · [한국어]({{ "/kr/essays/debuggingless-development/" | relative_url }})
 {: .article-backlink }
 
 Debuggingless Development is a development method for minimizing debugging.
