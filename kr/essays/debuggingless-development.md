@@ -67,7 +67,7 @@ Debuggingless Development에서 관심을 두는 지점은 `null` 체크 자체�
 
 좋은 구조에서는 잘못된 상태를 처리하는 코드가 많아지는 것이 아니라, 잘못된 상태가 애초에 만들어지기 어렵다. 반대로 구조가 약하면 각 지점에서 방어 코드가 늘어난다. 방어 코드는 겉보기에는 안전장치처럼 보이지만, 때로는 시스템이 어떤 상태를 허용하는지 더 흐리게 만든다.
 
-이 관점에서 내가 자주 사용하는 형태가 [계층형 구조(Layered architecture)](https://en.wikipedia.org/wiki/Layer_(object-oriented_design))다.
+이 관점에서 내가 자주 사용하는 형태가 [계층형 구조(Layered architecture)](https://en.wikipedia.org/wiki/Multitier_architecture)다.
 
 계층형 구조 자체는 새로운 개념이 아니다. 운영체제, 네트워크 스택, 애플리케이션 아키텍처처럼 오래전부터 사용되어 온 방식이고, 보통은 UI, 도메인, 인프라 같은 비교적 큰 단위의 계층을 설명할 때 자주 등장한다.
 

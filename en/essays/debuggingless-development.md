@@ -67,7 +67,7 @@ Architecture is not about making code look neatly divided. It is about limiting 
 
 In a good structure, there is less code for handling invalid states because invalid states are harder to create in the first place. When the structure is weak, defensive code grows at every point. Defensive code can look like a safety device, but it can also make it less clear which states the system actually allows.
 
-The form I often use from this perspective is [layered architecture](https://en.wikipedia.org/wiki/Layer_(object-oriented_design)).
+The form I often use from this perspective is [layered architecture](https://en.wikipedia.org/wiki/Multitier_architecture).
 
 Layered architecture itself is not new. It has long been used in operating systems, network stacks, and application architecture. It is often explained in terms of relatively large layers such as UI, domain, and infrastructure.
 
