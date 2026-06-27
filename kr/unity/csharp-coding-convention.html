@@ -344,6 +344,8 @@
     .header-actions { display: flex; flex: 0 0 auto; gap: 8px; align-items: center; }
     .home-link { flex: 0 0 auto; padding: 8px 12px; border: 1px solid rgba(255,255,255,.34); border-radius: 8px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 800; }
     .home-link:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .language-select { min-height: 34px; padding: 6px 9px; border: 1px solid rgba(255,255,255,.34); border-radius: 8px; background: rgba(255,255,255,.08); color: #fff; color-scheme: dark; font-size: 13px; font-weight: 800; }
+    .language-select:hover, .language-select:focus-visible { border-color: #fff; outline: none; }
     .document-layout { display: block; }
     .document-layout .toc { position: fixed; top: 96px; left: max(18px, calc((100vw - 1240px) / 2 - 220px)); z-index: 25; display: grid; width: 190px; gap: 4px; margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: rgba(17,24,36,.96); box-shadow: var(--shadow); }
     .document-layout .toc a { min-height: 0; padding: 8px 10px; border: 0; border-radius: 6px; background: transparent; }
@@ -367,7 +369,7 @@
         <h1>Unity C# 코딩 컨벤션</h1>
       </div>
       <div class="header-actions">
-        <a class="home-link" href="../../en/unity/csharp-coding-convention.html" hreflang="en" data-language="en">EN</a>
+        <select class="language-select" data-language-select aria-label="언어"><option value="" data-language="kr" selected>한국어</option><option value="../../en/unity/csharp-coding-convention.html" data-language="en">English</option></select>
         <a class="home-link" href="../">Home</a>
       </div>
     </header>
@@ -1130,13 +1132,22 @@ private int count;</code></pre>
     </div>
   </main>
   <script>
-    document.querySelectorAll("[data-language]").forEach(function (link) {
-      link.addEventListener("click", function () {
+    document.querySelectorAll("[data-language-select]").forEach(function (select) {
+      select.addEventListener("change", function () {
+        var option = select.options[select.selectedIndex];
+        var language = option.getAttribute("data-language");
+        var href = option.value;
+
         try {
-          localStorage.setItem("preferred-language", link.getAttribute("data-language"));
+          localStorage.setItem("preferred-language", language);
         } catch (error) {
+        }
+
+        if (href) {
+          location.href = href;
         }
       });
     });
-  </script></body>
+  </script>
+</body>
 </html>

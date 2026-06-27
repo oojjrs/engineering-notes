@@ -44,7 +44,6 @@
     <header class="site-header">
       <div class="site-shell header-inner">
         <a class="site-brand" href="{{ home_url | relative_url }}" aria-label="{{ brand_label }}">
-          <span class="brand-mark">EN</span>
           <span class="brand-name">Engineering Notes</span>
         </a>
         <div class="site-nav-group">
@@ -54,11 +53,16 @@
             <a href="{{ essay_url | relative_url }}">Essay</a>
           </nav>
           {% if page.alternate_url %}
-            {% if is_english %}
-              <a class="language-switch" href="{{ page.alternate_url | relative_url }}" hreflang="ko-KR" data-language="kr">KR</a>
-            {% else %}
-              <a class="language-switch" href="{{ page.alternate_url | relative_url }}" hreflang="en" data-language="en">EN</a>
-            {% endif %}
+            <label class="language-label" for="site-language">{% if is_english %}Language{% else %}언어{% endif %}</label>
+            <select class="language-select" id="site-language" data-language-select aria-label="{% if is_english %}Language{% else %}언어{% endif %}">
+              {% if is_english %}
+                <option value="{{ page.url | relative_url }}" data-language="en" selected>English</option>
+                <option value="{{ page.alternate_url | relative_url }}" data-language="kr">한국어</option>
+              {% else %}
+                <option value="{{ page.url | relative_url }}" data-language="kr" selected>한국어</option>
+                <option value="{{ page.alternate_url | relative_url }}" data-language="en">English</option>
+              {% endif %}
+            </select>
           {% endif %}
         </div>
       </div>
@@ -74,11 +78,19 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll("[data-language]").forEach(function (link) {
-          link.addEventListener("click", function () {
+        document.querySelectorAll("[data-language-select]").forEach(function (select) {
+          select.addEventListener("change", function () {
+            var option = select.options[select.selectedIndex];
+            var language = option.getAttribute("data-language");
+            var href = option.value;
+
             try {
-              localStorage.setItem("preferred-language", link.getAttribute("data-language"));
+              localStorage.setItem("preferred-language", language);
             } catch (error) {
+            }
+
+            if (href && href !== location.pathname) {
+              location.href = href;
             }
           });
         });
