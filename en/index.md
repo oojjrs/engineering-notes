@@ -8,19 +8,17 @@ alternate_url: /kr/
 
 <section class="landing-intro" aria-labelledby="landing-title">
   <p class="eyebrow">ENGINEERING NOTES</p>
-  <div class="landing-intro-layout">
-    <h1 id="landing-title">Engineering Standards and Decision Records</h1>
-    <p>Reusable references for Codex workflows, Design.html planning standards, Unity C# conventions, and development methods.</p>
-  </div>
+  <h1 id="landing-title"><span>Standards.</span><span>Decisions.</span><span>Records.</span></h1>
+  <p class="landing-kicker">Reusable engineering notes.</p>
 </section>
 
 <section class="section" id="notes">
   <div class="section-heading">
     <div>
       <p class="eyebrow">COLLECTIONS</p>
-      <h2>Document Sets</h2>
+      <h2>Read</h2>
     </div>
-    <p>Codex workflows, Unity rules, and engineering philosophy grouped by topic.</p>
+    <p>Codex · Unity · Essay</p>
   </div>
 
   <div class="collection-grid">
@@ -28,7 +26,7 @@ alternate_url: /kr/
       <span class="card-index">01</span>
       <span class="card-label">AI WORKFLOW</span>
       <h3>Codex</h3>
-      <p>Shared working rules and planning-document standards for producing consistent agent outputs.</p>
+      <p>Work rules · Planning</p>
       <span class="card-link">View 2 notes <span aria-hidden="true">→</span></span>
     </a>
 
@@ -36,15 +34,15 @@ alternate_url: /kr/
       <span class="card-index">02</span>
       <span class="card-label">GAME DEVELOPMENT</span>
       <h3>Unity</h3>
-      <p>Practical C# writing rules and structural standards for Unity projects.</p>
+      <p>C# rules · Structure</p>
       <span class="card-link">View 1 note <span aria-hidden="true">→</span></span>
     </a>
 
     <a class="collection-card collection-card-essay" href="{{ "/en/essays/debuggingless-development/" | relative_url }}">
       <span class="card-index">03</span>
       <span class="card-label">ENGINEERING ESSAY</span>
-      <h3>Development Philosophy</h3>
-      <p>Thinking about logical design during code writing before reactive debugging takes over.</p>
+      <h3>Philosophy</h3>
+      <p>Before debugging · Design</p>
       <span class="card-link">Read essay <span aria-hidden="true">→</span></span>
     </a>
   </div>

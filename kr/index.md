@@ -8,19 +8,17 @@ alternate_url: /en/
 
 <section class="landing-intro" aria-labelledby="landing-title">
   <p class="eyebrow">ENGINEERING NOTES</p>
-  <div class="landing-intro-layout">
-    <h1 id="landing-title">개발 기준과 판단 기록</h1>
-    <p>Codex 작업 지침, Design.html 작성 기준, Unity C# 컨벤션처럼 반복해서 참고할 기술 기준을 한곳에 정리합니다.</p>
-  </div>
+  <h1 id="landing-title"><span>기준.</span><span>판단.</span><span>기록.</span></h1>
+  <p class="landing-kicker">반복해서 쓰는 개발 문서 저장소.</p>
 </section>
 
 <section class="section" id="notes">
   <div class="section-heading">
     <div>
       <p class="eyebrow">COLLECTIONS</p>
-      <h2>문서 묶음</h2>
+      <h2>읽을 것</h2>
     </div>
-    <p>작업 흐름, Unity 규칙, 개발 철학을 주제별로 엮었습니다.</p>
+    <p>Codex · Unity · Essay</p>
   </div>
 
   <div class="collection-grid">
@@ -28,7 +26,7 @@ alternate_url: /en/
       <span class="card-index">01</span>
       <span class="card-label">AI WORKFLOW</span>
       <h3>Codex</h3>
-      <p>에이전트가 일관된 결과물을 만들기 위한 공용 작업 원칙과 기획서 생성 기준.</p>
+      <p>작업 지침 · 기획 기준</p>
       <span class="card-link">문서 2개 보기 <span aria-hidden="true">→</span></span>
     </a>
 
@@ -36,7 +34,7 @@ alternate_url: /en/
       <span class="card-index">02</span>
       <span class="card-label">GAME DEVELOPMENT</span>
       <h3>Unity</h3>
-      <p>Unity 프로젝트에서 바로 적용할 수 있는 C# 작성 규칙과 구조적 기준.</p>
+      <p>C# 규칙 · 구조</p>
       <span class="card-link">문서 1개 보기 <span aria-hidden="true">→</span></span>
     </a>
 
@@ -44,8 +42,8 @@ alternate_url: /en/
       <span class="card-index">03</span>
       <span class="card-label">ENGINEERING ESSAY</span>
       <h3>개발 철학</h3>
-      <p>사후 디버깅의 조건 대응보다 코드 작성 단계의 논리 설계를 먼저 생각합니다.</p>
-      <span class="card-link">에세이 읽기 <span aria-hidden="true">→</span></span>
+      <p>디버깅 이전 · 설계</p>
+      <span class="card-link">자세히 읽기 <span aria-hidden="true">→</span></span>
     </a>
   </div>
 </section>
