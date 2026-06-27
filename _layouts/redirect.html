@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'ko-KR' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
+    <link rel="canonical" href="{{ page.redirect_to }}">
+    <title>Engineering Notes moved</title>
+    <script>
+      location.replace("{{ page.redirect_to }}" + location.search + location.hash);
+    </script>
+  </head>
+  <body>
+    <p>Engineering Notes moved to <a href="{{ page.redirect_to }}">{{ page.redirect_to }}</a>.</p>
+  </body>
+</html>

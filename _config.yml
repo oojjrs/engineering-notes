@@ -1,5 +1,6 @@
 title: Engineering Notes Redirect
 description: Redirects old engineering-notes URLs to oojjrs.github.io.
+lang: ko-KR
 include:
   - 404.html
 
