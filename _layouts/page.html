@@ -9,6 +9,16 @@ layout: default
       <p class="article-description">{{ page.description }}</p>
     {% endif %}
   </header>
+  {% if page.toc_items %}
+    <nav class="article-toc" aria-label="문서 목차">
+      <p class="article-toc-label">CONTENTS</p>
+      <ol>
+        {% for item in page.toc_items %}
+          <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+  {% endif %}
   <div class="article-body">
     {{ content }}
   </div>
