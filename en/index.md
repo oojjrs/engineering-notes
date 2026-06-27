@@ -6,13 +6,21 @@ permalink: /en/
 alternate_url: /kr/
 ---
 
+<section class="landing-intro" aria-labelledby="landing-title">
+  <p class="eyebrow">ENGINEERING NOTES</p>
+  <div class="landing-intro-layout">
+    <h1 id="landing-title">Engineering Standards and Decision Records</h1>
+    <p>Reusable references for Codex workflows, Design.html planning standards, Unity C# conventions, and development methods.</p>
+  </div>
+</section>
+
 <section class="section" id="notes">
   <div class="section-heading">
     <div>
       <p class="eyebrow">COLLECTIONS</p>
-      <h2>Notes By Topic</h2>
+      <h2>Document Sets</h2>
     </div>
-    <p>Currently publishing 4 notes across 3 topics.</p>
+    <p>Codex workflows, Unity rules, and engineering philosophy grouped by topic.</p>
   </div>
 
   <div class="collection-grid">

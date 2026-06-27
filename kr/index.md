@@ -6,13 +6,21 @@ permalink: /kr/
 alternate_url: /en/
 ---
 
+<section class="landing-intro" aria-labelledby="landing-title">
+  <p class="eyebrow">ENGINEERING NOTES</p>
+  <div class="landing-intro-layout">
+    <h1 id="landing-title">개발 기준과 판단 기록</h1>
+    <p>Codex 작업 지침, Design.html 작성 기준, Unity C# 컨벤션처럼 반복해서 참고할 기술 기준을 한곳에 정리합니다.</p>
+  </div>
+</section>
+
 <section class="section" id="notes">
   <div class="section-heading">
     <div>
       <p class="eyebrow">COLLECTIONS</p>
-      <h2>주제별 문서</h2>
+      <h2>문서 묶음</h2>
     </div>
-    <p>현재 3개 주제, 4개 문서를 공개하고 있습니다.</p>
+    <p>작업 흐름, Unity 규칙, 개발 철학을 주제별로 엮었습니다.</p>
   </div>
 
   <div class="collection-grid">
