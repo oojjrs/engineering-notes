@@ -1,15 +1,7 @@
-title: Engineering Notes
-description: Notes on software architecture, system design, and development philosophy.
-theme: minima
-lang: ko-KR
-author: Engineering Notes
-markdown: kramdown
-permalink: pretty
-
-plugins:
-  - jekyll-seo-tag
+title: Engineering Notes Redirect
+description: Redirects old engineering-notes URLs to oojjrs.github.io.
+include:
+  - 404.html
 
 exclude:
   - README.md
-  - Gemfile
-  - Gemfile.lock
