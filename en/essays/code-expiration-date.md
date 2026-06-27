@@ -18,7 +18,7 @@ toc_items:
     label: "Organizational judgment"
 ---
 
-[← All notes]({{ "/en/" | relative_url }}) · [한국어]({{ "/kr/essays/code-expiration-date/" | relative_url }})
+[← All notes]({{ "/en/" | relative_url }})
 {: .article-backlink }
 
 Code has a shelf life from the moment it is written.

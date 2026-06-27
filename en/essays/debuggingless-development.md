@@ -24,7 +24,7 @@ toc_items:
     label: "Conclusion"
 ---
 
-[← All notes]({{ "/en/" | relative_url }}) · [한국어]({{ "/kr/essays/debuggingless-development/" | relative_url }})
+[← All notes]({{ "/en/" | relative_url }})
 {: .article-backlink }
 
 Debuggingless Development is a development method for minimizing debugging.

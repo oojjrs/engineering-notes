@@ -24,7 +24,7 @@ toc_items:
     label: "결론"
 ---
 
-[← 모든 문서]({{ "/kr/" | relative_url }}) · [English version]({{ "/en/essays/debuggingless-development/" | relative_url }})
+[← 모든 문서]({{ "/kr/" | relative_url }})
 {: .article-backlink }
 
 Debuggingless Development는 디버깅을 최소화하는 개발 방법론이다.
