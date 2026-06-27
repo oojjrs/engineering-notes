@@ -361,8 +361,9 @@
           <li>기획서 작성 중 생긴 후보 이미지·영상·소리, 비교표, 접촉시트, 임시 변환물, 폐기 초안은 프로젝트 루트 <code>$Trash</code> 아래에만 둡니다. <code>DesignAssets</code>/<code>GuidelinesAssets</code>에는 현재 최종 문서가 실제 참조하는 확정 자료만 둡니다.</li>
           <li>현재 구현과 100% 일치하는 기준 문서를 목표로 하며, 구현되지 않은 가정은 미해결 항목으로 분리합니다.</li>
           <li>코드와 기획서가 충돌할 때, 코드가 더 최신 구현을 담고 있으면 코드를 우선하고 기획서를 코드에 맞춰 정리합니다.</li>
-          <li>이미지, 영상, 소리, 미리보기처럼 바로 이해되는 자료를 본문 설명보다 우선합니다.</li>
-          <li>글은 자료만으로 부족한 부분과 “왜 이 결정을 했는가”를 설명하는 데 집중합니다.</li>
+          <li>글자 설명만 있는 기획서는 아직 완성본으로 보지 않습니다. 모든 기획 내용은 최종적으로 에셋, 화면, 동작, 사운드, 데이터 구조로 구현되어야 하므로 문서도 가능한 한 그 결과물의 형태로 보여줍니다.</li>
+          <li>이미지, 영상, 소리, 미리보기, 도형, 흐름도, 상태 전환 다이어그램처럼 바로 이해되는 자료를 본문 설명보다 우선합니다. 동작 설명도 긴 문단 대신 도형, 단계 그림, 상태표, 짧은 캡션으로 표현합니다.</li>
+          <li>글은 자료만으로 부족한 부분과 “왜 이 결정을 했는가”를 설명하는 데만 씁니다. 반드시 글이 필요할 때도 가장 짧게 쓰고, 사용자의 긴 설명을 그대로 옮기지 않습니다.</li>
           <li>도메인 한정 용어, 고유 명사, 프로젝트 내부 이름, 약어, 아트/시스템 용어처럼 추가 설명이 필요한 항목은 <span class="term-tip" tabindex="0" aria-label="용어 설명"><span class="term-tip-text">문서 표면에는 물음표 아이콘만 두고, 마우스오버나 포커스 때 프로젝트 안에서의 의미를 짧게 보여줍니다.</span></span> 툴팁을 적극 사용합니다.</li>
           <li>Codex가 용어의 프로젝트 내 의미를 모르면 임의로 정의하지 않고 사용자에게 물은 뒤 그 답을 툴팁에 반영합니다.</li>
           <li>기획서 작성 규칙 자체는 이 리뷰 문서와 스킬에 두고, 실제 <code>Design.html</code> 본문에는 장황한 메타 규칙을 노출하지 않습니다.</li>
@@ -374,6 +375,9 @@
           <li>범주별 구현 기준을 별도 섹션으로 모아두지 않습니다. 범주 기준과 결정 사유는 각 섹션 안에서 해당 데이터, 이미지, 표, 사운드와 붙여 둡니다.</li>
           <li>헤더 바로 아래에 문서 신호, 작성 지침, 범주 요약 같은 메타 섹션을 두지 않습니다. 첫 본문 섹션부터 실제 게임/제품 내용을 다룹니다.</li>
           <li><code>Design.html</code> 헤더에는 문서 제목과 외부 참조 링크 두 개만 둡니다. 링크는 <a href="https://oojjrs.github.io/engineering-notes/kr/codex/common-work-guidelines.html" target="_blank" rel="noopener noreferrer">Codex 공통 작업 지침</a>, <a href="https://oojjrs.github.io/engineering-notes/kr/codex/guideline-design-generation.review.html" target="_blank" rel="noopener noreferrer">기획서 작성 기준</a>을 가리키되, 링크 자체는 참조용 내비게이션일 뿐 <code>Design.html</code> 본문에 작업 지침 내용을 섞는 근거가 아닙니다.</li>
+          <li><code>Design.html</code> 헤더는 스크롤 중에도 상단에 유지되는 sticky 문서 크롬으로 둡니다. 헤더가 본문을 가리지 않도록 좌측 floating 목차의 top offset과 섹션 <code>scroll-margin</code>을 헤더 높이에 맞춰 조정합니다. 좌측 목차는 본문 바깥 여백이 충분한 넓은 화면에서만 표시하고, 좁은 화면에서는 숨겨 본문과 겹치지 않게 합니다.</li>
+          <li>현재 레이아웃 표본은 <code>H:\Mines\Design.html</code>입니다. 새 기획서나 기존 기획서 갱신은 Mines의 구조처럼 sticky 헤더, 좌측 floating 목차, 작성 완료 섹션 우선 배치, 뒤쪽 미작성 후보 접힘 묶음을 기본 골격으로 삼습니다.</li>
+        </ul>
 
         <h3>게임 기획 기본 범주</h3>
         <p>첫 <code>Design.html</code>을 만들 때는 아래 범주를 기본 얼개로 삼고, 프로젝트에 맞지 않는 항목은 삭제하거나 합칩니다. 퍼즐 스테이지, 공장 물류, 전략 외교 같은 장르 전용 항목은 처음부터 독립 대분류로 만들지 말고 가까운 일반 범주에 넣습니다.</p>
@@ -432,7 +436,7 @@
           <div class="sample">
             <h4><span class="badge">Design</span>롤링 표본</h4>
             <p>새 <code>Design.html</code> 작업은 현재 프로젝트 문서를 먼저 보고, 그 다음 최근 편집·검증된 live <code>Design.html</code>을 기준으로 삼습니다.</p>
-            <p>역사적 seed: <code>H:\Overlord\Design.html</code>. 스냅샷: <code>samples\Overlord.Design.sample.html</code></p>
+            <p>현재 live 표본: <code>H:\Mines\Design.html</code>. 역사적 seed: <code>H:\Overlord\Design.html</code>. 스냅샷: <code>samples\Overlord.Design.sample.html</code></p>
           </div>
         </div>
         <p class="note">스냅샷은 이 리뷰 문서와 함께 보기 위한 참고본입니다. 실제 프로젝트 작업에서는 항상 live 경로의 최신 파일과 최근 편집 문서를 다시 열어야 합니다.</p>
