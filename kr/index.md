@@ -39,5 +39,13 @@ alternate_url: /en/
       <p>디버깅 이전 · 설계</p>
       <span class="card-link">읽기 <span aria-hidden="true">→</span></span>
     </a>
+
+    <a class="collection-card collection-card-essay" href="{{ "/kr/essays/code-expiration-date/" | relative_url }}">
+      <span class="card-index">05</span>
+      <span class="card-label">ENGINEERING ESSAY</span>
+      <h3>코드의 유통기한</h3>
+      <p>설계 비용 · 리빌딩</p>
+      <span class="card-link">읽기 <span aria-hidden="true">→</span></span>
+    </a>
   </div>
 </section>

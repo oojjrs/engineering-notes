@@ -39,5 +39,13 @@ alternate_url: /kr/
       <p>Before debugging · Design</p>
       <span class="card-link">Read <span aria-hidden="true">→</span></span>
     </a>
+
+    <a class="collection-card collection-card-essay" href="{{ "/en/essays/code-expiration-date/" | relative_url }}">
+      <span class="card-index">05</span>
+      <span class="card-label">ENGINEERING ESSAY</span>
+      <h3>The Shelf Life of Code</h3>
+      <p>Design cost · Rebuilds</p>
+      <span class="card-link">Read <span aria-hidden="true">→</span></span>
+    </a>
   </div>
 </section>
