@@ -8,8 +8,8 @@ alternate_url: /en/
 
 <section class="landing-intro" aria-labelledby="landing-title">
   <p class="eyebrow">ENGINEERING NOTES</p>
-  <h1 id="landing-title"><span>기준.</span><span>판단.</span><span>기록.</span></h1>
-  <p class="landing-kicker">반복해서 쓰는 개발 문서 저장소.</p>
+  <h1 id="landing-title"><span>개발 기준</span><span>판단 기록</span></h1>
+  <p class="landing-kicker">반복해서 쓰는 문서.</p>
 </section>
 
 <section class="section" id="notes">

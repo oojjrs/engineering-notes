@@ -8,8 +8,8 @@ alternate_url: /kr/
 
 <section class="landing-intro" aria-labelledby="landing-title">
   <p class="eyebrow">ENGINEERING NOTES</p>
-  <h1 id="landing-title"><span>Standards.</span><span>Decisions.</span><span>Records.</span></h1>
-  <p class="landing-kicker">Reusable engineering notes.</p>
+  <h1 id="landing-title"><span>Standards</span><span>Records</span></h1>
+  <p class="landing-kicker">Reusable notes.</p>
 </section>
 
 <section class="section" id="notes">
