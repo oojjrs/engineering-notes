@@ -47,7 +47,7 @@ permalink: /
       <span class="card-index">03</span>
       <span class="card-label">ENGINEERING ESSAY</span>
       <h3>개발 철학</h3>
-      <p>디버깅 기술보다 버그가 생기기 어려운 시스템 설계를 먼저 생각합니다.</p>
+      <p>사후 디버깅의 조건 대응보다 코드 작성 단계의 논리 설계를 먼저 생각합니다.</p>
       <span class="card-link">에세이 읽기 <span aria-hidden="true">→</span></span>
     </a>
   </div>
@@ -82,7 +82,7 @@ permalink: /
     </a>
     <a class="note-row" href="{{ "/essays/debuggingless-development/" | relative_url }}">
       <span class="note-type">ESSAY</span>
-      <span class="note-title">디버깅이 거의 필요 없는 시스템을 설계하기</span>
+      <span class="note-title">Debuggingless Development</span>
       <span class="note-topic">Architecture</span>
       <span class="note-arrow" aria-hidden="true">↗</span>
     </a>
