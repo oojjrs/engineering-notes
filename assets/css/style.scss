@@ -107,19 +107,23 @@ pre code {
 }
 .collection-card::after {
   position: absolute;
-  right: -42px;
-  bottom: -58px;
-  width: 180px;
-  height: 180px;
-  border: 40px solid currentColor;
-  border-radius: 50%;
-  content: "";
-  opacity: .08;
+  right: -30px;
+  bottom: -78px;
+  z-index: 0;
+  color: currentColor;
+  font: 950 250px/.82 "Segoe UI", "Arial Black", sans-serif;
+  letter-spacing: 0;
+  opacity: .10;
+  pointer-events: none;
 }
+.collection-card > * { position: relative; z-index: 1; }
 .collection-card:hover { z-index: 1; border-color: currentColor; transform: translateY(-5px); }
 .collection-card-codex { color: var(--accent); }
+.collection-card-codex::after { content: "C"; }
 .collection-card-unity { color: var(--blue); }
+.collection-card-unity::after { content: "U"; }
 .collection-card-essay { color: var(--orange); }
+.collection-card-essay::after { content: "O"; }
 .card-index { font: 800 13px Consolas, monospace; }
 .card-label { margin-top: 54px; font: 850 11px Consolas, monospace; letter-spacing: 0; }
 .collection-card h3 { margin: 8px 0 12px; color: var(--text); font-size: 32px; font-weight: 900; line-height: 1.14; letter-spacing: 0; }
