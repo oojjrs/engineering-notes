@@ -100,10 +100,6 @@
     }
 
     .reference-strip {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) repeat(3, auto);
-      gap: 10px;
-      align-items: center;
       margin: 0 0 18px;
       padding: 16px 18px;
       border: 1px solid var(--line);
@@ -119,33 +115,40 @@
       text-transform: uppercase;
     }
 
-    .reference-strip span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 13px;
+    .priority-list {
+      margin: 10px 0 0;
+      padding-left: 22px;
+      color: var(--text);
+      font-size: 14px;
     }
 
-    .reference-strip a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 6px 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+    .priority-list li {
+      margin: 7px 0;
+      padding-left: 4px;
+    }
+
+    .priority-list span {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .priority-list a {
       color: var(--text);
       text-decoration: none;
-      font-size: 13px;
-      white-space: nowrap;
     }
 
-    .reference-strip a:hover {
-      border-color: var(--accent-strong);
+    .priority-list a:hover {
       color: #ffffff;
     }
 
-    .purpose-summary {
+    .reference-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .purpose-summary,
+    .method-summary {
       margin: 0 0 18px;
       padding: 18px 20px;
       border: 1px solid rgba(125, 211, 252, 0.28);
@@ -154,7 +157,8 @@
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
     }
 
-    .purpose-summary strong {
+    .purpose-summary strong,
+    .method-summary strong {
       display: block;
       color: var(--accent);
       font-size: 12px;
@@ -162,7 +166,8 @@
       text-transform: uppercase;
     }
 
-    .purpose-summary ul {
+    .purpose-summary ul,
+    .method-summary ul {
       margin: 8px 0 0;
       padding-left: 18px;
       max-width: 980px;
@@ -170,7 +175,8 @@
       font-size: 15px;
     }
 
-    .purpose-summary li {
+    .purpose-summary li,
+    .method-summary li {
       margin: 5px 0;
     }
 
@@ -314,9 +320,6 @@
         grid-template-columns: 1fr;
       }
 
-      .reference-strip {
-        grid-template-columns: 1fr;
-      }
     }
 
     /* Persistent document navigation */
@@ -325,16 +328,15 @@
     main > header h1 { font-size: clamp(25px, 4vw, 40px); }
     .home-link { flex: 0 0 auto; padding: 8px 12px; border: 1px solid rgba(255,255,255,.34); border-radius: 8px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 800; }
     .home-link:hover { border-color: #fff; background: rgba(255,255,255,.08); }
-    .document-layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 18px; align-items: start; }
-    .document-layout .toc { position: sticky; top: 110px; display: grid; gap: 4px; margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: rgba(17,24,36,.96); box-shadow: var(--shadow); }
+    .document-layout { display: block; }
+    .document-layout .toc { position: sticky; top: 75px; z-index: 15; display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 18px; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: rgba(17,24,36,.96); box-shadow: var(--shadow); }
     .document-layout .toc a { min-height: 0; padding: 8px 10px; border: 0; border-radius: 6px; background: transparent; }
     .document-layout .toc a:hover { background: var(--panel-strong); }
     .document-content section { scroll-margin-top: 110px; }
     @media (max-width: 760px) {
       .header-copy { overflow: hidden; }
       main > header h1 { overflow: hidden; font-size: 20px; text-overflow: ellipsis; white-space: nowrap; }
-      .document-layout { grid-template-columns: 1fr; }
-      .document-layout .toc { top: 73px; z-index: 15; display: flex; overflow-x: auto; }
+      .document-layout .toc { top: 73px; overflow-x: auto; flex-wrap: nowrap; }
       .document-layout .toc a { flex: 0 0 auto; white-space: nowrap; }
     }
   </style>
@@ -351,11 +353,17 @@
     <section class="purpose-summary" aria-label="컨벤션 목적">
       <strong>목적</strong>
       <ul>
-        <li>IDE와 표준 도구의 기본 규칙을 최대한 그대로 쓴다.</li>
         <li>코드 모양을 고민하는 시간을 0에 가깝게 줄인다.</li>
+        <li>도메인 숙련도가 높아질수록 코드 분석 속도가 0에 가까워지게 한다.</li>
+      </ul>
+    </section>
+
+    <section class="method-summary" aria-label="컨벤션 수단">
+      <strong>수단</strong>
+      <ul>
+        <li>IDE와 표준 도구의 기본 규칙을 최대한 그대로 쓴다.</li>
         <li>수동 코딩 중 판단 기준을 단순하게 유지한다.</li>
         <li>동사-함수, 명사-변수처럼 컨텍스트 정보를 일관되게 둔다.</li>
-        <li>도메인 숙련도가 높아질수록 코드 분석 속도가 0에 가까워지게 한다.</li>
         <li>최종 검수와 수동 코딩 기준을 맞추기 위해 AI에게도 동일하게 요구한다.</li>
       </ul>
     </section>
@@ -363,13 +371,13 @@
     <div class="scope-rule">서드파티 코드 영역은 이 컨벤션 적용 대상이 아니다. 기존 도메인이 존재하는 곳은 항상 기존 원칙을 우선한다.</div>
 
     <section class="reference-strip" aria-label="상위 기준">
-      <div>
-        <strong>적용 우선순위</strong>
-        <span>이 문서에서 언급하지 않은 컨벤션은 Unity 기준과 Visual Studio Code Style 기본 옵션을 따른다.</span>
-      </div>
-      <a href="https://unity.com/how-to/naming-and-code-style-tips-c-scripting-unity" target="_blank" rel="noopener noreferrer">Unity C# Style</a>
-      <a href="https://learn.microsoft.com/en-us/visualstudio/ide/code-styles-and-code-cleanup?view=vs-2022" target="_blank" rel="noopener noreferrer">Visual Studio Code Style</a>
-      <a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions" target="_blank" rel="noopener noreferrer">C# Coding Conventions</a>
+      <strong>적용 우선순위</strong>
+      <ol class="priority-list">
+        <li><span>이 문서</span></li>
+        <li><a href="https://unity.com/how-to/naming-and-code-style-tips-c-scripting-unity" target="_blank" rel="noopener noreferrer">Unity C# Style</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/visualstudio/ide/code-styles-and-code-cleanup?view=vs-2022" target="_blank" rel="noopener noreferrer">Visual Studio Code Style 기본 옵션</a> / <a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions" target="_blank" rel="noopener noreferrer">C# Coding Conventions</a></li>
+      </ol>
+      <p class="reference-note">이 문서에서 언급하지 않은 컨벤션은 Unity 기준과 Visual Studio Code Style 기본 옵션을 따른다.</p>
     </section>
 
     <div class="document-layout">
