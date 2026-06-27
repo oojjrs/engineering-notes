@@ -6,19 +6,6 @@ permalink: /en/
 alternate_url: /kr/
 ---
 
-<section class="hero">
-  <p class="eyebrow">SOFTWARE · GAME DEVELOPMENT · AI WORKFLOW</p>
-  <h1>Development Standards<br>and Rationale.</h1>
-  <p class="hero-copy">
-    A technical document repository for Codex workflow rules, Design.html standards, Unity C# conventions, and development methodology.
-    It keeps reusable rules and decision rationale in one place.
-  </p>
-  <div class="hero-actions">
-    <a class="button button-primary" href="#notes">Browse notes</a>
-    <a class="button button-secondary" href="https://github.com/{{ site.github.repository_nwo }}">GitHub repository</a>
-  </div>
-</section>
-
 <section class="section" id="notes">
   <div class="section-heading">
     <div>
