@@ -32,5 +32,20 @@
         <p class="footer-meta">Built with GitHub Pages<br>© {{ "now" | date: "%Y" }}</p>
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          var href = link.getAttribute("href");
+          if (!href || href.charAt(0) === "#" || href.indexOf("mailto:") === 0 || href.indexOf("tel:") === 0) {
+            return;
+          }
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+          if (link.closest(".article-body, .document-card, .footer-inner")) {
+            link.classList.add("new-window-link");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

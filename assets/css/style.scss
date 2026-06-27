@@ -26,6 +26,22 @@ body {
   word-break: keep-all;
 }
 a { color: inherit; text-decoration: none; }
+a.new-window-link::after {
+  display: inline-flex;
+  width: .92em;
+  height: .92em;
+  align-items: center;
+  justify-content: center;
+  margin-left: .3em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  content: "↗";
+  font-size: .62em;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: .08em;
+}
 code {
   padding: .12em .36em;
   border: 1px solid rgba(216, 255, 62, .22);
@@ -152,7 +168,7 @@ pre code {
 
 .article { max-width: 1040px; padding-top: 90px; padding-bottom: 120px; }
 .article-header { max-width: 880px; margin-bottom: 42px; padding-bottom: 42px; border-bottom: 1px solid var(--line); }
-.article-header h1 { max-width: 850px; margin: 0; font-size: clamp(46px, 7vw, 78px); letter-spacing: 0; line-height: 1.08; }
+.article-header h1 { max-width: 850px; margin: 0; font-size: clamp(40px, 6vw, 64px); letter-spacing: 0; line-height: 1.12; }
 .article-description { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: 20px; line-height: 1.65; }
 .article-toc {
   max-width: 760px;
@@ -192,7 +208,7 @@ pre code {
 .article-body .article-lead {
   margin: 0 0 1.3em;
   color: var(--text);
-  font-size: clamp(22px, 2.4vw, 29px);
+  font-size: clamp(19px, 2vw, 23px);
   font-weight: 780;
   line-height: 1.52;
 }
@@ -202,7 +218,7 @@ pre code {
   padding-top: 1.05em;
   border-top: 1px solid var(--line);
   color: var(--text);
-  font-size: 33px;
+  font-size: 29px;
   letter-spacing: 0;
   line-height: 1.25;
   scroll-margin-top: 96px;
@@ -222,7 +238,7 @@ pre code {
   padding: 3px 0 3px 24px;
   border-left: 4px solid var(--accent);
   color: var(--text);
-  font-size: 21px;
+  font-size: 18px;
 }
 .article-body blockquote p { color: var(--text); }
 .article-body .article-principle {
@@ -232,8 +248,8 @@ pre code {
   border-left: 5px solid var(--accent);
   border-radius: 6px;
   background: linear-gradient(90deg, rgba(216, 255, 62, .13), rgba(32, 37, 31, .88));
-  font-size: clamp(21px, 2vw, 25px);
-  font-weight: 760;
+  font-size: clamp(18px, 1.7vw, 20px);
+  font-weight: 720;
   line-height: 1.55;
 }
 .article-body .article-principle p { margin: 0; }
@@ -282,11 +298,11 @@ pre code {
   .note-type { grid-column: 1 / -1; }
   .article { padding-top: 60px; }
   .article-header { margin-bottom: 34px; padding-bottom: 34px; }
-  .article-header h1 { font-size: 43px; }
+  .article-header h1 { font-size: 36px; }
   .article-description { font-size: 18px; }
   .article-toc { margin-bottom: 42px; padding: 18px 20px; }
   .article-body { font-size: 17px; line-height: 1.78; }
-  .article-body h2 { margin-top: 3.6em; font-size: 28px; }
+  .article-body h2 { margin-top: 3.4em; font-size: 25px; }
   .article-body .article-principle { padding: 20px; }
   .footer-inner { display: block; padding: 46px 0; }
   .footer-meta { margin-top: 24px; text-align: left; }
