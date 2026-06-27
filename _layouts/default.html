@@ -6,18 +6,10 @@
 {% endif %}
 {% if is_english %}
   {% assign home_url = '/en/' %}
-  {% assign codex_url = '/en/codex/' %}
-  {% assign unity_url = '/en/unity/' %}
-  {% assign essay_url = '/en/essays/debuggingless-development/' %}
-  {% assign nav_label = 'Primary navigation' %}
   {% assign brand_label = 'Engineering Notes home' %}
   {% assign footer_copy = 'Reusable records for engineering judgment.' %}
 {% else %}
   {% assign home_url = '/kr/' %}
-  {% assign codex_url = '/kr/codex/' %}
-  {% assign unity_url = '/kr/unity/' %}
-  {% assign essay_url = '/kr/essays/debuggingless-development/' %}
-  {% assign nav_label = '주요 메뉴' %}
   {% assign brand_label = 'Engineering Notes 홈' %}
   {% assign footer_copy = '생각을 다시 사용할 수 있도록 기록합니다.' %}
 {% endif %}
@@ -47,11 +39,6 @@
           <span class="brand-name">Engineering Notes</span>
         </a>
         <div class="site-nav-group">
-          <nav class="site-nav" aria-label="{{ nav_label }}">
-            <a href="{{ codex_url | relative_url }}">Codex</a>
-            <a href="{{ unity_url | relative_url }}">Unity</a>
-            <a href="{{ essay_url | relative_url }}">Essay</a>
-          </nav>
           {% if page.alternate_url %}
             <label class="language-label" for="site-language">{% if is_english %}Language{% else %}언어{% endif %}</label>
             <select class="language-select" id="site-language" data-language-select aria-label="{% if is_english %}Language{% else %}언어{% endif %}">
